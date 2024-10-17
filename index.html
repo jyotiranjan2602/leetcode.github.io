@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="../public/images/leetcode.ico"> 
+    <title>Create Hello World function-leetcode</title>
+    <style>
+        body {
+            background-color: rgb(235, 232, 232);
+            ;
+        }
+
+        header {
+            padding: 5px;
+            font-family: arial;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header span {
+            margin-left: 10px;
+        }
+
+        .logo {
+            background-color: white;
+            padding: 3px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .run-bar span {
+            margin-left: 1px;
+        }
+
+        .bi-bug-fill {
+            background-color: rgb(184, 181, 181);
+            padding: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .bi-play-fill {
+            background-color: rgb(184, 181, 181);
+            padding: 5px;
+        }
+
+        .bi-cloud-upload {
+            background-color: rgb(184, 181, 181);
+            padding: 5px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .bi-file-earmark {
+            background-color: rgb(184, 181, 181);
+            padding: 5px;
+        }
+
+        .signin-bar {
+            font-size: 14px;
+        }
+
+        .btn-premium {
+            background-color: rgb(255, 232, 198);
+            color: rgb(255, 145, 0);
+            font-size: 15px;
+            font-weight: bold;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            grid-gap: 10px;
+            margin-top: 15px;
+            height: 540px;
+            border-radius: 6px;
+        }
+
+        .panel-left {
+            border-radius: 10px; 
+            background-color: white;
+        }
+        .left-panel-bar{
+            padding: 10px;
+            padding-left: 10px;
+            font-family: arial;
+            font-size: 15px;
+            background-color: rgba(224, 208, 208, 0.795);
+        }
+        .left-panel-bar span{
+            margin-right: 5px;
+        }
+        .bi-card-text{
+            color: blue;
+        }
+        .text,.book,.solution,.submission{
+            color: black;
+        }
+        .bi-book{
+            color: orange;
+        }
+        .bi-funnel{
+            color: skyblue;
+        }
+        .bi-clock-history{
+            color: skyblue;
+        }
+        .panel-right {
+            border-radius: 10px;
+            background-color: white;
+        }
+       .right-panel-bar{
+        padding: 10px;
+        background-color:rgba(224, 208, 208, 0.795);
+        font-family: arial;
+        font-size: 15px;
+       }
+       .bi-code-slash{
+        color: green;
+       }
+       .code{
+        color: black;
+        font-family: arial;
+       }
+       .right-panel-bar-2{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 7px;
+        font-size: 15px;
+        font-family: arial;
+       }
+       .right-panel-bar-2 span{
+        margin-left: 6px;
+        margin-right: 6px;
+       }
+       hr{
+        border-top: 1px solid lightgrey;
+       }
+       .left-panel-content{
+        font-family: arial;
+        height: 530px;
+        overflow: auto;
+       }
+       .panel-question-no{
+        font-size: 23px;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-left: 15px;
+       }
+       .panel-items{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 20px;
+       }
+       .easy{
+        color: skyblue;
+        background-color: rgb(235, 232, 232);
+        border-radius: 10px;
+        padding: 5px;
+        font-weight: bold;
+       }
+       .bi-lock{
+        background-color: rgb(235, 232, 232);
+        border-radius: 10px;
+        padding: 5px;
+       }
+       .panel-question{
+        margin-top: 20px;
+        margin-left: 15px;
+        margin-right: 5px;
+       }
+       .panel-question samp{
+        background-color: lightgrey;
+        border-radius: 5px;
+        padding: 3px;
+       }
+       .example-1{
+        font-family: arial;
+        margin-left: 10px;
+        margin-top: 15px;
+    
+       }
+       .example-1 pre{
+        margin-left: -180px;
+        font-size: 14px;
+        color: grey;
+       }
+     pre b{
+        font-weight: bold;
+        color: black;
+       }
+       .example-2{
+        font-family: arial;
+        margin-left: 10px;
+        margin-top: 15px;
+       }
+       .example-2 pre{
+        margin-left: -180px;
+        font-size: 14px;
+        color: grey;
+       }
+       .left-panel-about{
+        font-family: arial;
+       }
+       .about-content{
+        font-weight: bold;
+        margin-left: 10px;
+        font-size: 17px;
+       }
+       .bi-dot{
+        font-size: 20px;
+        margin-left: 40px;
+       }
+       .bi-dot .about-function{
+        font-size: 14px;
+        background-color: rgb(216, 213, 213);
+        padding: 3px;
+        border-radius: 6px;
+       }
+       .accept{
+        font-family: arial;
+        font-size: 12px;
+        margin-left: 20px;
+        margin-top: 20px;
+
+       }
+       span .ratio{
+        display: inline-block;
+        font-weight: bold;
+        font-size: 14px;
+       }
+       .companies{
+        font-family: arial;
+        margin-top: 20px;
+        margin-left: 20px ;
+        margin-bottom: 20px;
+       }
+       .discussion{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-family: arial;
+       }
+       .copyrights{
+        font-family: arial;
+        margin-top: 60px;
+        margin-left: 20px;
+        font-size: 13px;
+        color: grey;
+       }
+       .left-footer{
+        padding: 10px;
+        margin-left: 7px;
+       }
+       .left-footer span{
+        font-size: 13px;
+        color: grey;
+       }
+       .bi-hand-thumbs-up{
+        background-color: rgb(238, 237, 237);
+        padding: 6px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+       }
+       .bi-hand-thumbs-down{
+        background-color:rgb(238, 237, 237) ;
+        padding: 6px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+       }
+       .bi-star,.bi-box-arrow-up-right,.bi-question-circle{
+        margin-left: 9px;
+       }
+       .right-content{
+        font-family: Arial;
+        margin-left: 10px;
+       }
+       .right-content span{
+        font-size: 14px;
+        color: grey;
+        font-weight:lighter;
+       }
+       .right-panel-content{
+        margin-left: -120px;
+        color:green;
+       }
+       .right-panel-content var{
+        color: blue;
+       }
+       .right-panel-content samp{
+        color: grey;
+       }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <span class="logo">JS</span>
+            <span>30 days of javasript</span>
+            <span class="bi bi-chevron-left"></span>
+            <span class="bi bi-chevron-right"></span>
+            <span class="bi bi-shuffle"></span>
+        </div>
+        <div class="run-bar">
+            <span class="bi bi-bug-fill"></span>
+            <span class="bi bi-play-fill">Run</span>
+            <span class="bi bi-cloud-upload">Submit</span>
+            <span class="bi bi-file-earmark"></span>
+        </div>
+        <div class="signin-bar">
+            <span class="bi bi-columns-gap"></span>
+            <span class="bi bi-gear"></span>
+            <span class="btn-register">Register</span>
+            <span>or</span>
+            <span>Sign&nbsp;in</span>
+            <span class="btn-premium">Premium</span>
+        </div>
+    </header>
+    <section>
+        <div class="panel-left">
+            <div class="left-panel-bar">
+                <span class="bi bi-card-text">&nbsp;<span class="text">Description</span></span>
+                <span class="bi bi-book">&nbsp;<span class="book">Editorial</span></span>
+                <span class="bi bi-funnel">&nbsp;<span class="solution">Solution</span></span>
+                <span class="bi bi-clock-history">&nbsp;<span class="submission">Submission</span></span>
+            </div>
+            <div class="left-panel-content">
+                <div class="panel-question-no">
+                    2667. Create Hello World Function
+                </div>
+                <div class="panel-items">
+                    <span class="easy">Easy</span>
+                    <span class="bi bi-lock">Companies</span>
+                </div>
+                <div  class="panel-question">
+                    Write a function <samp>createHelloWorld</samp>. It should return a new function that always returns <samp>"Hello World"</samp>.
+                </div>
+                <div class="example-1">
+                  <b> Example 1:</b>
+                        <pre>
+                            <b>Input:</b> args = []
+                            <b>Output:</b> "Hello World"
+                            <b>Explanation:</b>
+                            const f = createHelloWorld();
+                            f(); // "Hello World"
+                            <br><br>
+                            The function returned by createHelloWorld should always return "Hello World".
+                        </pre>
+                </div>
+                <div class="example-2">
+                    <b>Example 2:</b>
+                        <pre>
+                            <b>Input:</b> args = [{},null,42]
+                            <b>Output:</b> "Hello World"
+                            <b>Explanation:</b>
+                            const f = createHelloWorld();
+                            f({}, null, 42); // "Hello World"
+                            <br>
+                            Any arguments could be passed to the function but it should still 
+                            always return "Hello World".
+                        </pre>
+                </div>
+                <div class="left-panel-about">
+                    <div class="about-content">Constraints:</div>
+                    <span class="bi bi-dot"><span class="about-function">0<=args.length <=10</span></span>
+                </div>
+                <div class="accept">
+                    <span>Accepted&nbsp;&nbsp;<span class="ratio">513.3k</span></span> |
+                    <span>submission&nbsp;&nbsp;<span class="ratio">629.4k</span></span>&nbsp;|&nbsp;
+                    <span>Accceptant Rate&nbsp;&nbsp;<span class="ratio">81.6%</span></span>
+                </div>
+                <hr width="95%">
+                <div class="companies">
+                    <span class="bi bi-lock-fill">Companies</span>
+                </div>
+                <hr width="95%">
+                <div class="discussion">
+                    <span class="bi bi-chat">&nbsp;&nbsp;Discussion&nbsp;&nbsp;(165)</span>
+                </div>
+                <div class="copyrights">
+                    Copyright ©️ 2024 LeetCode All rights reserved
+                </div>
+            </div>
+            <div class="left-footer">
+                <span class="bi bi-hand-thumbs-up">1.3k</span>
+                <span class="bi bi-hand-thumbs-down"></span>
+                <span class="bi bi-chat">165</span> &nbsp;&nbsp;|
+                <span class="bi bi-star"></span>
+                <span class="bi bi-box-arrow-up-right"></span>
+                <span class="bi bi-question-circle"></span>
+            </div>
+        </div>
+        <div class="panel-right">
+            <div class="right-panel-bar">
+                <span class="bi bi-code-slash">&nbsp;&nbsp;<span class="code">Code</span></span>
+            </div>
+            <div class="right-panel-bar-2">
+                <div class="right-content">
+                    <span>Java script</span>
+                    <span class="bi bi-chevron-down"></span>
+                    <span class="bi bi-dot">Auto</span>
+                </div>
+                <div>
+                    <span class="bi bi-bookmark"></span>
+                    <span class="bi bi-braces"></span>
+                    <span class="bi bi-arrow-counterclockwise"></span>
+                    <span class="bi bi-arrows-angle-expand"></span>
+                </div>
+            </div>
+            <hr>
+            <div class="right-panel-content">
+                <pre>
+                    <code>
+                        **
+                        * @return <var>{Function}</var>
+                        */
+                     <var>var </var><samp>createHelloWorld</samp> = function() {
+    
+                            return <var>function</var>(...args) {
+                                }
+                        };
+
+                         /**
+                         * const f = createHelloWorld();
+                         * f(); // "Hello World"
+                         */
+                    </code>
+                </pre>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
